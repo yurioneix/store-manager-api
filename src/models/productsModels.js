@@ -7,4 +7,4 @@ const findAll = async () => {
   return products;
 };
 
-module.exports = findAll;
+module.exports = { findAll };
