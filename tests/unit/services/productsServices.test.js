@@ -6,7 +6,7 @@ const { allProductsModels } = require('../../../src/models');
 const { allProducts }  = require("../mocks/productsMocks");
 
 
-describe('Testes dos produtos da camada Service', function () {
+describe('Testes da camada Service de todos os produtos', function () {
   afterEach(function () {
     sinon.restore();
   });
@@ -24,9 +24,8 @@ describe('Testes dos produtos da camada Service', function () {
      sinon.stub(allProductsModels, "findAll").resolves(undefined);
      // Act
      const result = await productsServices.findAll();
-     console.log('result', result.message);
      // Assert
-     expect(result.message).to.be.deep.equal('PRODUCT_NOT_FOUND');
+     expect(result.message).to.be.deep.equal("Product not found");
      expect(result.type).to.be.deep.equal('ERROR');
    });
 });

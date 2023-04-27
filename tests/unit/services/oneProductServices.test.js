@@ -5,7 +5,7 @@ const { oneProductModel } = require("../../../src/models");
 
 const { oneProduct } = require('../mocks/oneProductMock');
 
-describe('Testes dos produtos da camada de service', function () {
+describe('Testes da camada Service de um produto específico', function () {
    afterEach(function () {
      sinon.restore();
    });
@@ -15,7 +15,7 @@ describe('Testes dos produtos da camada de service', function () {
     // Act 
     const result = await oneProductService.getProductById(1);
     // Assert
-    // expect(result.type).to.be.deep.equal(null);
+    expect(result.type).to.be.deep.equal(null);
     expect(result.message).to.be.deep.equal(oneProduct);
   });
   it('Verifica se ao passar um id inválido, retorna um erro', async function () {
@@ -34,7 +34,7 @@ describe('Testes dos produtos da camada de service', function () {
      // Act
      const result = await oneProductService.getProductById(14);
      // Assert
-     expect(result.message).to.equal("ID_NOT_FOUND");
+     expect(result.message).to.equal("Product not found");
      expect(result.type).to.equal("ERROR");
    });
 });

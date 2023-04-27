@@ -9,7 +9,7 @@ const { productsServices } = require('../../../src/services');
 const { productsController } = require('../../../src/controllers');
 const allProducts = require('../mocks/productsMocks');
 
-describe('Testes dos produtos da camada Controller', function () {
+describe('Testes da camada Controller de todos os produtos', function () {
   afterEach(function () {
     sinon.restore();
   })
@@ -36,11 +36,11 @@ describe('Testes dos produtos da camada Controller', function () {
     res.json = sinon.stub().returns();
     sinon
       .stub(productsServices, "findAll")
-      .resolves({ type: 'ERROR', message: 'PRODUCT_NOT_FOUND' });
+      .resolves({ type: 'ERROR', message: 'Product not found' });
     // Act
     await productsController.listProducts(req, res);
     // Assert
     expect(res.status).to.have.been.calledWith(404);
-    expect(res.json).to.have.been.calledWith('PRODUCT_NOT_FOUND');
+    expect(res.json).to.have.been.calledWith('Product not found');
   });
 });
