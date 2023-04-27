@@ -47,6 +47,6 @@ describe('Testes da camada Controller de um produto específico', function () {
     await oneProductController.getProductById(req, res);
     // Assert
     expect(res.status).to.have.been.calledWith(404);
-    expect(res.json).to.have.been.calledWith('Product not found');
+    expect(res.json).to.have.been.calledWith({ message: 'Product not found'});
   });
 });
