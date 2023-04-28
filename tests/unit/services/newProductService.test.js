@@ -12,11 +12,12 @@ describe('Testes da camada Service para cadastrar um produto', function () {
     // Act
     const result = await newProductService.newProduct(newProduct);
     // Assert 
-    expect(result.message).to.be.deep.equal({
-      id: 4,
-      name: "ProdutoX",
-    });
-    expect(result.type).to.be.equal(null);
+    // expect(result.message).to.be.deep.equal({
+    //   id: 4,
+    //   name: "ProdutoX",
+    // });
+    // expect(result.type).to.be.equal(null);
+    expect(result).to.be.deep.equal({ type: null, message: { id: 4, name: "ProdutoX" }});
   });
 
   it("Verifica se ao cadastrar um produto sem o campo name, retorna uma mensagem de erro", async function () {

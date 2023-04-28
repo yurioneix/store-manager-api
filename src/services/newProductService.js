@@ -10,7 +10,7 @@ const newProduct = async (product) => {
 
   const newProductId = await newProductModel.insert(product);
 
-  return { type: null, message: { id: newProductId, name: product } };
+  return { type: null, message: { id: newProductId, name } };
 };
 
 module.exports = { newProduct };
