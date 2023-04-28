@@ -23,7 +23,7 @@ describe('Testes da camada Service para cadastrar um produto', function () {
     // Act
     const result = await newProductService.newProduct(noProduct);
     // Assert
-    expect(result.message).to.be.deep.equal({
+    expect(result).to.be.deep.equal({
       type: "any.required",
       message: '"name" is required',
     });
@@ -33,7 +33,7 @@ describe('Testes da camada Service para cadastrar um produto', function () {
     // Act
     const result = await newProductService.newProduct(shortNameProduct);
     // Assert
-    expect(result.message).to.be.deep.equal({
+    expect(result).to.be.deep.equal({
       type: "string.min",
       message: '"name" length must be at least 5 characters long',
     });
