@@ -2,4 +2,10 @@ const newProduct = {
   name: "ProdutoX",
 };
 
-module.exports = { newProduct };
+const noProduct = {};
+
+const shortNameProduct = {
+  name: "Prod",
+}
+
+module.exports = { newProduct, noProduct, shortNameProduct };
