@@ -6,5 +6,5 @@ const createSale = async () => {
   );
   return insertId;
 };
-createSale();
+
 module.exports = { createSale };
