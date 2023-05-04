@@ -9,9 +9,10 @@ const createSale = async () => {
 
 const createSaleProducts = async (saleID, productID, quantity) => {
   const [{ affectedRows }] = await connection.execute(
-    'INSERT INTO StoreManager.sales_products (?, ?, ?)', [saleID, productID, quantity],
+    'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)',
+    [saleID, productID, quantity],
   );
-  console.log(affectedRows);
+  console.log('affectedRows', affectedRows);
   return affectedRows;
 };
 
