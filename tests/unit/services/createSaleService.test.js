@@ -15,8 +15,11 @@ describe('Testes da camada Service', function () {
     const result = await createSaleService.createSale(arrayOfSales);
     // Assert
     expect(result).to.be.deep.equal({
-      id: 3,
-      itemsSold: arrayOfSales,
+      status: 201,
+      message: {
+        id: 3,
+        itemsSold: arrayOfSales,
+      }
     });
   });
 });
