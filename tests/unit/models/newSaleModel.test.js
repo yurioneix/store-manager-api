@@ -9,7 +9,7 @@ describe('Testes da camada Model para cadastrar uma nova venda', function () {
     sinon.restore();
   });
 
-  it('Verifica se é possível cadastrar com sucesso uma nova venda', async function () {
+  it('Verifica se é possível cadastrar com sucesso uma nova venda na tabela sales', async function () {
     // Arrange
     sinon.stub(connection, "execute").resolves([{ insertId: 3 }]);
     // Act
@@ -17,4 +17,13 @@ describe('Testes da camada Model para cadastrar uma nova venda', function () {
     // Arrange
     expect(result).to.equal(3);
   });
+
+   it("Verifica se é possível cadastrar com sucesso uma nova venda na tabela sales", async function () {
+     // Arrange
+     sinon.stub(connection, "execute").resolves([{ affectedRows: 3 }]);
+     // Act
+     const result = await createSaleModel.createSaleProducts(2, 2, 20);
+     // Arrange
+     expect(result).to.equal(3);
+   });
 });

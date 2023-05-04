@@ -7,4 +7,12 @@ const createSale = async () => {
   return insertId;
 };
 
-module.exports = { createSale };
+const createSaleProducts = async (saleID, productID, quantity) => {
+  const [{ affectedRows }] = await connection.execute(
+    'INSERT INTO StoreManager.sales_products (?, ?, ?)', [saleID, productID, quantity],
+  );
+  console.log(affectedRows);
+  return affectedRows;
+};
+
+module.exports = { createSale, createSaleProducts };

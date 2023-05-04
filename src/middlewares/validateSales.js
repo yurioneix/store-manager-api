@@ -9,7 +9,7 @@ const validateSales = (req, res, next) => {
     return next();
   }
   const errorValidation = validatingSales.find((error) => error !== undefined);
-  return res.status(errorValidation.status).json(errorValidation.message);
+  return res.status(errorValidation.status).json({ message: errorValidation.message });
 };
 
 module.exports = { validateSales };
