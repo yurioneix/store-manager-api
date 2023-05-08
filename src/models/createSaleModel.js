@@ -12,7 +12,6 @@ const createSaleProducts = async (saleID, productID, quantity) => {
     'INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity) VALUES (?, ?, ?)',
     [saleID, productID, quantity],
   );
-  console.log('affectedRows', affectedRows);
   return affectedRows;
 };
 
