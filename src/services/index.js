@@ -3,6 +3,7 @@ const oneProductService = require('./oneProductService');
 const newProductService = require('./newProductService');
 const createSaleService = require('./createSaleService');
 const salesService = require('./salesService');
+const oneSaleService = require('./oneSaleService');
 
 module.exports = {
   productsServices,
@@ -10,4 +11,5 @@ module.exports = {
   newProductService,
   createSaleService, 
   salesService,
+  oneSaleService,
 };
