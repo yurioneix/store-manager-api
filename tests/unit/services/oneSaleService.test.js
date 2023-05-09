@@ -20,7 +20,7 @@ describe('Testes da camada Service de uma venda específica', function () {
   });
   it("Verifica se ao passar um id inválido, retorna um erro", async function () {
     // Arrange
-    sinon.stub(oneSaleModel, "getSaleById").resolves(undefined);
+    sinon.stub(oneSaleModel, "getSaleById").resolves([]);
     // Act
     const result = await oneSaleService.getSaleById(14);
     // Assert

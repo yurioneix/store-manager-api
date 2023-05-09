@@ -4,6 +4,7 @@ const newProductModel = require('./newProductModel');
 const createSaleModel = require('./createSaleModel');
 const salesModel = require('./salesModel');
 const oneSaleModel = require('./oneSaleModel');
+const updateProductModel = require('./updateProductModel');
 
 module.exports = {
   allProductsModels,
@@ -12,4 +13,5 @@ module.exports = {
   createSaleModel,
   salesModel,
   oneSaleModel,
+  updateProductModel,
 };

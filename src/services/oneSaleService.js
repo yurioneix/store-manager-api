@@ -10,6 +10,4 @@ const getSaleById = async (id) => {
   }
 };
 
-getSaleById(2);
-
 module.exports = { getSaleById };
