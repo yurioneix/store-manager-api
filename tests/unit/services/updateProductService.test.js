@@ -1,6 +1,7 @@
 const { expect } = require("chai");
 const sinon = require("sinon");
 const { updateProductService } = require("../../../src/services");
+const { noProduct, shortNameProduct } = require('../mocks/newProductMock')
 
 describe('Testes da camada Service para atualizar um produto', function () {
   afterEach(function () {
@@ -24,6 +25,25 @@ describe('Testes da camada Service para atualizar um produto', function () {
     expect(result).to.be.deep.equal({
       type: "ERROR",
       message: "Product not found",
+    });
+  });
+  it("Verifica se ao atualizar um produto sem o campo name, retorna uma mensagem de erro", async function () {
+    // Act
+    const result = await updateProductService.update(noProduct);
+    // Assert
+    expect(result).to.be.deep.equal({
+      type: "any.required",
+      message: '"name" is required',
+    });
+  });
+
+  it("Verifica se ao cadastrar com o campo name menor que 5 caracteres, retorna uma mensagem de erro", async function () {
+    // Act
+    const result = await updateProductService.update(shortNameProduct);
+    // Assert
+    expect(result).to.be.deep.equal({
+      type: "string.min",
+      message: '"name" length must be at least 5 characters long',
     });
   });
 });

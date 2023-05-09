@@ -65,16 +65,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3001/products/14",
-    "url": "http://localhost:3001/products/14",
+    "url": "http://localhost:3001/products/",
     "method": "PUT",
     "sortNum": 0,
     "created": "2023-05-09T03:27:11.476Z",
-    "modified": "2023-05-09T03:36:07.751Z",
+    "modified": "2023-05-09T16:39:19.655Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
+      "raw": "{\n  \"name\": \"Yuri\"\n}",
       "form": []
     },
     "tests": []
