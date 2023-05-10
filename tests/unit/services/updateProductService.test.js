@@ -28,8 +28,10 @@ describe('Testes da camada Service para atualizar um produto', function () {
     });
   });
   it("Verifica se ao atualizar um produto sem o campo name, retorna uma mensagem de erro", async function () {
+    // Arrange 
+    const id = 1;
     // Act
-    const result = await updateProductService.update(noProduct);
+    const result = await updateProductService.update(undefined, id);
     // Assert
     expect(result).to.be.deep.equal({
       type: "any.required",
@@ -38,8 +40,10 @@ describe('Testes da camada Service para atualizar um produto', function () {
   });
 
   it("Verifica se ao cadastrar com o campo name menor que 5 caracteres, retorna uma mensagem de erro", async function () {
+    // Assert 
+    const id = 1;
     // Act
-    const result = await updateProductService.update(shortNameProduct);
+    const result = await updateProductService.update(shortNameProduct.name, id);
     // Assert
     expect(result).to.be.deep.equal({
       type: "string.min",

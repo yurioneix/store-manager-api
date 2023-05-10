@@ -4,11 +4,11 @@ const nameSchema = require('./validations/validateName');
 
 const update = async (name, id) => {
   try {
-    const errorID = idSchema.validateId(id);
     const errorName = nameSchema.validateName(name);
+    const errorID = idSchema.validateId(id);
 
-    if (errorID.type) return errorID;
     if (errorName.type) return errorName;
+    if (errorID.type) return errorID;
 
     const updateProduct = await updateProductModel.update(name, id);
     if (updateProduct === 0) throw new Error();
