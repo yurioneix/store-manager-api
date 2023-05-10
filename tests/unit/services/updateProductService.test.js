@@ -1,7 +1,7 @@
 const { expect } = require("chai");
 const sinon = require("sinon");
 const { updateProductService } = require("../../../src/services");
-const { noProduct, shortNameProduct } = require('../mocks/newProductMock')
+const { shortNameProduct } = require('../mocks/newProductMock')
 
 describe('Testes da camada Service para atualizar um produto', function () {
   afterEach(function () {
