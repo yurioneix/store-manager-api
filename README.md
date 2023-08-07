@@ -1,6 +1,6 @@
 # Store Manager API
 
-Projeto desenvolvido no módulo de Backend da Trybe, onde foi criado uma API RESTful, de gerenciamento de vendas em que será possível criar, visualizar, deletar e atualizar produtos e vendas, utilizando a arquitetura MSC.
+Projeto desenvolvido no módulo de Backend da Trybe, onde foi criado uma API RESTful em Node, de gerenciamento de vendas em que será possível criar, visualizar, deletar e atualizar produtos e vendas, utilizando a arquitetura MSC junto com Express e MySQL.
 
 ## Instalação
 
